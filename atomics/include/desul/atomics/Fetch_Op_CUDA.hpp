@@ -19,11 +19,11 @@ SPDX-License-Identifier: (BSD-3-Clause)
 #if (CUDA_VERSION >= 12080) && !defined(DESUL_CUDA_ARCH_IS_PRE_HOPPER) && \
     defined(__cpp_concepts)
 #include <desul/atomics/Concepts.hpp>
-namespace desul{
-namespace Impl{
+namespace desul {
+namespace Impl {
 #include <desul/atomics/cuda/cuda_cc9_exchange.hpp>
 }
-}
+}  // namespace desul
 #endif
 
 #else
