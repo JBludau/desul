@@ -17,9 +17,13 @@ SPDX-License-Identifier: (BSD-3-Clause)
 
 // cas based impl for 128bit
 #if (CUDA_VERSION >= 12080) && !defined(DESUL_CUDA_ARCH_IS_PRE_HOPPER) && \
-    defined(DESUL_ENABLE_CXX20)
+    defined(__cpp_concepts)
 #include <desul/atomics/Concepts.hpp>
+namespace desul{
+namespace Impl{
 #include <desul/atomics/cuda/cuda_cc9_exchange.hpp>
+}
+}
 #endif
 
 #else
